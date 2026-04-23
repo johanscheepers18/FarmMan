@@ -1,0 +1,4 @@
+QWidget#navbar {
+    background-color: transparent;
+    border-bottom: 2px solid #a0db2a;
+}
