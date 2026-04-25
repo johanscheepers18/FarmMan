@@ -1,0 +1,548 @@
+[
+    [
+        {
+            "timestamp": "2026-04-25 10:00:00+02:00",
+            "temp": 15.6,
+            "wind_speed": 7.9,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-25 11:00:00+02:00",
+            "temp": 16.4,
+            "wind_speed": 8.5,
+            "condition": "partlycloudy_day"
+        },
+        {
+            "timestamp": "2026-04-25 12:00:00+02:00",
+            "temp": 16.6,
+            "wind_speed": 6.3,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-04-25 13:00:00+02:00",
+            "temp": 16.7,
+            "wind_speed": 5.1,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-25 14:00:00+02:00",
+            "temp": 16.8,
+            "wind_speed": 7.2,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-25 15:00:00+02:00",
+            "temp": 16.9,
+            "wind_speed": 8.5,
+            "condition": "lightrainshowers_day"
+        },
+        {
+            "timestamp": "2026-04-25 16:00:00+02:00",
+            "temp": 16.4,
+            "wind_speed": 9.1,
+            "condition": "rainshowers_day"
+        },
+        {
+            "timestamp": "2026-04-25 17:00:00+02:00",
+            "temp": 16.1,
+            "wind_speed": 8.5,
+            "condition": "lightrainshowers_day"
+        },
+        {
+            "timestamp": "2026-04-25 18:00:00+02:00",
+            "temp": 16.5,
+            "wind_speed": 10.3,
+            "condition": "cloudy"
+        },
+        {
+            "timestamp": "2026-04-25 19:00:00+02:00",
+            "temp": 17.2,
+            "wind_speed": 10.8,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-25 20:00:00+02:00",
+            "temp": 17.5,
+            "wind_speed": 9.6,
+            "condition": "fair_night"
+        },
+        {
+            "timestamp": "2026-04-25 21:00:00+02:00",
+            "temp": 17.0,
+            "wind_speed": 9.0,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-25 22:00:00+02:00",
+            "temp": 16.9,
+            "wind_speed": 8.4,
+            "condition": "fair_night"
+        },
+        {
+            "timestamp": "2026-04-25 23:00:00+02:00",
+            "temp": 16.7,
+            "wind_speed": 7.4,
+            "condition": "partlycloudy_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-04-26 00:00:00+02:00",
+            "temp": 16.8,
+            "wind_speed": 6.9,
+            "condition": "fair_night"
+        },
+        {
+            "timestamp": "2026-04-26 01:00:00+02:00",
+            "temp": 16.8,
+            "wind_speed": 6.6,
+            "condition": "lightrainshowers_night"
+        },
+        {
+            "timestamp": "2026-04-26 02:00:00+02:00",
+            "temp": 16.4,
+            "wind_speed": 7.1,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-26 03:00:00+02:00",
+            "temp": 16.5,
+            "wind_speed": 7.3,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 04:00:00+02:00",
+            "temp": 16.5,
+            "wind_speed": 6.8,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 05:00:00+02:00",
+            "temp": 16.7,
+            "wind_speed": 6.4,
+            "condition": "fair_night"
+        },
+        {
+            "timestamp": "2026-04-26 06:00:00+02:00",
+            "temp": 16.8,
+            "wind_speed": 6.7,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-04-26 07:00:00+02:00",
+            "temp": 17.1,
+            "wind_speed": 6.8,
+            "condition": "lightrainshowers_day"
+        },
+        {
+            "timestamp": "2026-04-26 08:00:00+02:00",
+            "temp": 17.1,
+            "wind_speed": 5.8,
+            "condition": "lightrainshowers_day"
+        },
+        {
+            "timestamp": "2026-04-26 09:00:00+02:00",
+            "temp": 17.1,
+            "wind_speed": 5.6,
+            "condition": "partlycloudy_day"
+        },
+        {
+            "timestamp": "2026-04-26 10:00:00+02:00",
+            "temp": 17.5,
+            "wind_speed": 7.3,
+            "condition": "partlycloudy_day"
+        },
+        {
+            "timestamp": "2026-04-26 11:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 8.1,
+            "condition": "partlycloudy_day"
+        },
+        {
+            "timestamp": "2026-04-26 12:00:00+02:00",
+            "temp": 18.1,
+            "wind_speed": 7.8,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-04-26 13:00:00+02:00",
+            "temp": 18.3,
+            "wind_speed": 7.3,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-04-26 14:00:00+02:00",
+            "temp": 18.5,
+            "wind_speed": 7.5,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-26 15:00:00+02:00",
+            "temp": 18.5,
+            "wind_speed": 7.7,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-26 16:00:00+02:00",
+            "temp": 18.7,
+            "wind_speed": 7.2,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-26 17:00:00+02:00",
+            "temp": 18.8,
+            "wind_speed": 6.6,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-26 18:00:00+02:00",
+            "temp": 18.8,
+            "wind_speed": 6.4,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-26 19:00:00+02:00",
+            "temp": 18.3,
+            "wind_speed": 6.2,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 20:00:00+02:00",
+            "temp": 18.2,
+            "wind_speed": 7.0,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 21:00:00+02:00",
+            "temp": 18.3,
+            "wind_speed": 7.8,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 22:00:00+02:00",
+            "temp": 18.3,
+            "wind_speed": 8.3,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-26 23:00:00+02:00",
+            "temp": 18.1,
+            "wind_speed": 8.1,
+            "condition": "clearsky_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-04-27 00:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 8.1,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 01:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 7.9,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 02:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 7.3,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 03:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 6.6,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 04:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 6.8,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 05:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 6.2,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-27 06:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 6.4,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 07:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 6.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 08:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 6.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 09:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 6.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 10:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.4,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 11:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.5,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 12:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 13:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.7,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 14:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.4,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 15:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.9,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 16:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 17:00:00+02:00",
+            "temp": 18.0,
+            "wind_speed": 7.6,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 18:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 7.6,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-27 19:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 7.1,
+            "condition": "fair_night"
+        },
+        {
+            "timestamp": "2026-04-27 20:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 6.7,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-27 21:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 6.0,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-27 22:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 5.2,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-27 23:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 4.4,
+            "condition": "clearsky_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-04-28 00:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 4.1,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-28 01:00:00+02:00",
+            "temp": 17.7,
+            "wind_speed": 4.0,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-04-28 02:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 3.5,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-28 08:00:00+02:00",
+            "temp": 17.8,
+            "wind_speed": 3.9,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-28 14:00:00+02:00",
+            "temp": 18.4,
+            "wind_speed": 1.4,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-28 20:00:00+02:00",
+            "temp": 18.4,
+            "wind_speed": 2.0,
+            "condition": "clearsky_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-04-29 02:00:00+02:00",
+            "temp": 18.0,
+            "wind_speed": 2.7,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-04-29 08:00:00+02:00",
+            "temp": 17.4,
+            "wind_speed": 1.2,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-29 14:00:00+02:00",
+            "temp": 18.7,
+            "wind_speed": 3.1,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-29 20:00:00+02:00",
+            "temp": 18.4,
+            "wind_speed": 4.0,
+            "condition": "clearsky_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-04-30 02:00:00+02:00",
+            "temp": 17.6,
+            "wind_speed": 0.8,
+            "condition": "cloudy"
+        },
+        {
+            "timestamp": "2026-04-30 08:00:00+02:00",
+            "temp": 17.5,
+            "wind_speed": 1.7,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-30 14:00:00+02:00",
+            "temp": 18.2,
+            "wind_speed": 3.0,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-04-30 20:00:00+02:00",
+            "temp": 18.5,
+            "wind_speed": 1.1,
+            "condition": "cloudy"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-05-01 02:00:00+02:00",
+            "temp": 18.3,
+            "wind_speed": 2.8,
+            "condition": "partlycloudy_night"
+        },
+        {
+            "timestamp": "2026-05-01 08:00:00+02:00",
+            "temp": 17.9,
+            "wind_speed": 3.8,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-05-01 14:00:00+02:00",
+            "temp": 18.4,
+            "wind_speed": 4.8,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-05-01 20:00:00+02:00",
+            "temp": 18.2,
+            "wind_speed": 6.6,
+            "condition": "rainshowers_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-05-02 02:00:00+02:00",
+            "temp": 16.4,
+            "wind_speed": 7.0,
+            "condition": "lightrainshowers_night"
+        },
+        {
+            "timestamp": "2026-05-02 08:00:00+02:00",
+            "temp": 16.3,
+            "wind_speed": 9.1,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-05-02 14:00:00+02:00",
+            "temp": 16.4,
+            "wind_speed": 11.9,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-05-02 20:00:00+02:00",
+            "temp": 15.9,
+            "wind_speed": 10.6,
+            "condition": "clearsky_night"
+        }
+    ],
+    [
+        {
+            "timestamp": "2026-05-03 02:00:00+02:00",
+            "temp": 15.4,
+            "wind_speed": 2.9,
+            "condition": "clearsky_night"
+        },
+        {
+            "timestamp": "2026-05-03 08:00:00+02:00",
+            "temp": 16.1,
+            "wind_speed": 5.1,
+            "condition": "clearsky_day"
+        },
+        {
+            "timestamp": "2026-05-03 14:00:00+02:00",
+            "temp": 16.9,
+            "wind_speed": 3.9,
+            "condition": "fair_day"
+        },
+        {
+            "timestamp": "2026-05-03 20:00:00+02:00",
+            "temp": 17.2,
+            "wind_speed": 6.2,
+            "condition": "fair_night"
+        }
+    ]
+]
