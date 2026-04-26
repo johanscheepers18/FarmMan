@@ -1,6 +1,9 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
+from PyQt6.QtWebEngineWidgets import QWebEngineView
+
+import folium as fol
 
 class WeatherCard(QWidget):
     def __init__(self, labels):
@@ -19,3 +22,9 @@ class WeatherCard(QWidget):
             layout.addWidget(widget)
 
         self.setLayout(layout)
+
+class FieldCard(QWidget):
+    def __init__(self, labels):
+        super().__init__()
+
+        return

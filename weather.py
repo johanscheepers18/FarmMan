@@ -9,6 +9,7 @@ from threading import Timer
 from PyQt6.QtCore import QObject, pyqtSignal, QTimer, QThread
 
 from datetime import date, datetime
+from map import GenerateMap
 
 # Using the YR Weather API for real-time location based weather data on the dashboard
 # API DOCS: https://developer.yr.no/doc/locationforecast/HowTO/
@@ -24,15 +25,30 @@ class WeatherAPI(QObject):
     def CallApi(self):
         sitename = "https://github.com/johanscheepers18/FarmMan"
 
+        coDataFile = os.path.join(GenerateMap.userDataPath, GenerateMap.userDataFile)
+
+        lat, lon = -34.0320, 24.9176
+        if os.path.exists(coDataFile):
+            with open(coDataFile, 'r') as f:
+                coord = json.load(f)
+            for feature in coord["features"]:
+                print(feature)
+                if feature["geometry"]["type"] == "Point":
+                    lon = round(feature["geometry"]["coordinates"][0], 4)
+                    lat = round(feature["geometry"]["coordinates"][1], 4)
+                    break
+
+        print(f'lat{lat}, lon{lon}')
+
         ua = UserAgent()
         currentTime = datetime.now().astimezone()
         rfc = format_datetime(currentTime)
         headers = {'User-Agent': ua.random + sitename, 'Date': rfc}
 
         params = {
-            'lat': 34.0320,
-            'lon': 24.9176,
-            'altitude': 61
+            'lat': lat,
+            'lon': lon,
+            'altitude': 65
         }
 
         url = "https://api.met.no/weatherapi/locationforecast/2.0/"
@@ -53,7 +69,10 @@ class WeatherAPI(QObject):
             print(f"Connection error: {e}")
 
         # Timer for when the data should be updated: currently it's 10min(600sec) intervals.
-        Timer(600.0, self.CallApi).start()
+        
+        thread = Timer(600.0, self.CallApi)
+        thread.daemon = True
+        thread.start()
 
     def ConvertTime(self, timestamp):
         utc = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))

@@ -3,33 +3,49 @@ import sys
 import os
 import pyautogui
 import json
+from pathlib import Path
 
-from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtWidgets import QApplication, QCheckBox, QLabel, QMainWindow, QStatusBar, QToolBar, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QGridLayout, QGroupBox
+import time
+
+from PyQt6.QtCore import QSize, Qt, QUrl, QTimer
+from PyQt6.QtWidgets import QLabel, QMainWindow, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QGridLayout, QGroupBox, QLineEdit
+from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineDownloadRequest
+from PyQt6.QtWebEngineWidgets import QWebEngineView
+
 from widget import WeatherCard
 from weather import WeatherAPI
+from map import MapCard
+from hub import signal
 
 sys.setrecursionlimit(2000)
+screenWidth, screenHeight = pyautogui.size()
 
 class DashBoardWidget(QWidget):
+
     def __init__(self):
         super().__init__()
 
         self.weatherData = WeatherAPI()
 
-        data = []
-
-        screenHeight, screenWidth = pyautogui.size()
-
         layout = QGridLayout()
 
-        layout.addWidget(QPushButton("Button (0, 0)"), 0, 0)
-        layout.addWidget(QPushButton("Button (0, 1)"), 0, 1)
-        layout.addWidget(QPushButton("Button (1, 0)"), 0, 2)
+        mapBox = QGroupBox("Map")
+        mapBox.setFixedHeight(int(screenHeight*0.6))
+        print(screenHeight)
+        print(screenHeight*0.5)
+
+        self.mapBoxLayout = QHBoxLayout()
+        mapBox.setLayout(self.mapBoxLayout)
+        
+        layout.addWidget(mapBox, 0, 0, 1, 2)
+
+        self.DisplayMap()
+
+        signal.fieldAdded.connect(self.DisplayMap)
 
         # weather widget
         weatherBox = QGroupBox("Weather")
-        weatherBox.setFixedHeight(int(screenHeight*0.1))
+        weatherBox.setFixedHeight(int(screenHeight*0.2))
 
         self.weatherBoxLayout = QHBoxLayout()
         weatherBox.setLayout(self.weatherBoxLayout)
@@ -38,6 +54,7 @@ class DashBoardWidget(QWidget):
 
  
         self.setLayout(layout)
+        self.UpdateWeatherCards()
 
         # print(self.liveData)
         self.weatherData.triggerUpdate.connect(self.UpdateWeatherCards)
@@ -61,3 +78,16 @@ class DashBoardWidget(QWidget):
         for timeStamp in range(len(self.liveData[0])):
             self.weatherBoxLayout.addWidget(WeatherCard(self.liveData[0][timeStamp]))
             print(range(len(self.liveData)))
+
+    def DisplayMap(self):
+        if hasattr(self, 'mapCard') and self.mapCard is not None:
+            self.mapBoxLayout.removeWidget(self.mapCard)
+            self.mapCard.hide()
+            self.mapCard.deleteLater()
+
+        self.mapCard = MapCard()
+        # layout.addWidget(mapCard, 0, 0, 1, 2)
+        self.mapBoxLayout.addWidget(self.mapCard)
+
+        print("windowUpdated")
+
