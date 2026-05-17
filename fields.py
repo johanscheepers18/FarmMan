@@ -4,18 +4,21 @@ import os
 import pyautogui
 import json
 from pathlib import Path
+from db import Database
 
 import time
 
 from PyQt6.QtCore import QSize, Qt, QUrl, QTimer, pyqtSignal
-from PyQt6.QtWidgets import QLabel, QMainWindow, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QGridLayout, QGroupBox, QLineEdit
+from PyQt6.QtWidgets import QLabel, QMainWindow, QPushButton, QHBoxLayout, QVBoxLayout, QWidget, QGridLayout, QGroupBox, QLineEdit, QScrollArea
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineDownloadRequest
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
 from map import GenerateMap
 from hub import signal
+from widget import FieldCard
 
 
+screenWidth, screenHeight = pyautogui.size()
 class FieldsWidget(QWidget):
     def __init__(self):
         super().__init__()
@@ -36,41 +39,57 @@ class FieldsWidget(QWidget):
         self.addFieldButton.clicked.connect(self.displayAddWindow)
         self.fieldNavBar.addWidget(self.addFieldButton)
 
+        self.fieldScroll = QScrollArea()
+
         self.fieldsView = QWidget()
         self.fieldsView.setObjectName("Fields View")
 
-        self.fieldsViewLayout = QVBoxLayout()
+        self.fieldsViewLayout = QVBoxLayout(self.fieldsView)
         self.fieldsViewLayout.setAlignment(Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignCenter)
 
+        self.fieldScroll.setFixedHeight(int(screenHeight*0.5))
+        self.fieldScroll.setFixedWidth(int(screenWidth*0.42))
+        self.fieldScroll.setWidget(self.fieldsView)
+        self.fieldScroll.setWidgetResizable(True)
+
         self.layout.addWidget(self.fieldNavBarWidget)
-        self.layout.addWidget(self.fieldsView)
+        self.layout.addWidget(self.fieldScroll)
+        # self.fieldsViewLayout.addWidget(FieldCard())
 
         self.setLayout(self.layout)
         self.UpdateFieldCards()
 
+        signal.fieldAdded.connect(self.UpdateFieldCards)
+
     def UpdateFieldCards(self):
         try: 
-            with open("fieldData.json", 'r') as f:
+            with open(os.path.join(AddMap.userDataPath, AddMap.userDataFile), 'r') as f:
                 self.fieldData = json.load(f)
 
+            while self.fieldsViewLayout.count():
+                fields = self.fieldsViewLayout.takeAt(0)
+                widget = fields.widget()
+
+                if widget is not None:
+                    widget.deleteLater()
+
+            for field in self.fieldData["features"]:
+                if field["geometry"]["type"] == "Polygon":
+                    self.fieldsViewLayout.addWidget(FieldCard(field["geometry"]["coordinates"][0], field["properties"]["name"]))
+
         except FileNotFoundError:
-            return
-        
-        while self.fieldsViewLayout.count():
-            fields = self.fieldsViewLayout.takeAt(0)
-            widget = fields.widget()
-
-            if widget is not None:
-                widget.deleteLater()
-
-        for field in range(len(self.fieldData[0])):
-            self.fieldsViewLayout.addWidget(FieldCard(self.fieldData[0][field]))
-            print(range(len(self.fieldData)))
+            pass
 
     def displayAddWindow(self):
         self.addWindow = AddFieldWindow()
 
-        self.addWindow.show() 
+        self.addWindow.show()
+
+#     ///////////////////////////////////////////////////////////////////////////////////
+#    ////////////////////////                                 //////////////////////////
+#   ////////////////////////    DATA LAYER FOR FIELDS TAB    //////////////////////////
+#  ////////////////////////                                 //////////////////////////
+# ///////////////////////////////////////////////////////////////////////////////////
 
 class AddFieldWindow(QMainWindow):
         def __init__(self):
@@ -86,10 +105,26 @@ class AddFieldWindow(QMainWindow):
             fieldOptions = QWidget()
             fieldOptionsLayout = QVBoxLayout(fieldOptions)
 
+            self.fieldNameLayout = QHBoxLayout()
             fieldNameLabel = QLabel("Field Name: ")
-            fieldOptionsLayout.addWidget(fieldNameLabel)
             self.fieldName = QLineEdit()
-            fieldOptionsLayout.addWidget(self.fieldName)
+            self.fieldNameLayout.addWidget(fieldNameLabel)
+            self.fieldNameLayout.addWidget(self.fieldName)
+            fieldOptionsLayout.addLayout(self.fieldNameLayout)
+
+            fieldCropLayout = QHBoxLayout()
+            fieldCrop = QLabel("Current Crop: ")
+            self.fieldCropText = QLineEdit()
+            fieldCropLayout.addWidget(fieldCrop)
+            fieldCropLayout.addWidget(self.fieldCropText)
+            fieldOptionsLayout.addLayout(fieldCropLayout)
+
+
+            fieldStatusLayout = QHBoxLayout()
+            fieldStatus = QLabel("Current Field Status: ")
+            self.fieldStatusText = QLineEdit()
+            fieldStatusLayout.addWidget(fieldStatus)
+            fieldStatusLayout.addWidget(self.fieldStatusText)
 
             confirmButton = QPushButton("Confirm Add")
             fieldOptionsLayout.addWidget(confirmButton)
@@ -97,6 +132,11 @@ class AddFieldWindow(QMainWindow):
 
             self.addLayout.addWidget(mapWidget)
             self.addLayout.addWidget(fieldOptions)
+
+            signal.fieldAdded.connect(self.CloseAfterComp)
+
+        def CloseAfterComp(self):
+            self.close()
 
 
 class AddMap(QWidget):
@@ -183,7 +223,9 @@ class AddMap(QWidget):
         with open(self.fullSavePath, "w") as f:
             json.dump(data, f, indent=4)
 
-        time.sleep(2)
+        Database.AddFieldDB(newField["properties"]["name"], "", "", "", str(newField["geometry"]["coordinates"][0]))
+
+        time.sleep(1)
 
         os.remove(self.tempPath)
 

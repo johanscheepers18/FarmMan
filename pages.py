@@ -12,6 +12,8 @@ from PyQt6.QtWidgets import QLabel, QMainWindow, QPushButton, QHBoxLayout, QVBox
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineDownloadRequest
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 
+from fields import FieldsWidget
+
 from widget import WeatherCard
 from weather import WeatherAPI
 from map import MapCard
@@ -51,6 +53,17 @@ class DashBoardWidget(QWidget):
         weatherBox.setLayout(self.weatherBoxLayout)
 
         layout.addWidget(weatherBox, 1, 0, 1, 3)
+
+        #Fields Widget
+        fieldsBox = QGroupBox("Fields")
+        fieldsBox.setFixedHeight(int(screenHeight*0.6))
+        fieldsBox.setFixedWidth(int(screenWidth*0.44))
+
+        fieldsBoxLayout = QVBoxLayout()
+        fieldsBoxLayout.addWidget(FieldsWidget())
+        fieldsBox.setLayout(fieldsBoxLayout)
+
+        layout.addWidget(fieldsBox, 0, 2, 1, 1)
 
  
         self.setLayout(layout)
