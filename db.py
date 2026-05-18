@@ -45,4 +45,12 @@ class Database():
         rows = cursor.fetchall()
         conn.close
         return rows
+    
+    def FetchInField(fieldName):
+        conn = sql.connect(str(fullFilePath))
+        cursor = conn.cursor()
+        cursor.execute(f"SELECT * FROM fields WHERE name = '{fieldName}'")
+        rows = cursor.fetchall()
+        conn.close
+        return rows
 
